@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap');
+
+@font-face {
+    font-family: 'Happykin';
+    src: url('./assets/fonts/Happykin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}  
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+img{
+    width: 100%;
+}
+
+a {
+    color: inherit; /* Hereda el color del texto del elemento padre */
+    text-decoration: none; /* Elimina el subrayado */
+    background-color: transparent; /* Fondo transparente */
+    font-style: normal; /* Estilo de fuente normal, no cursiva */
+    font-weight: normal; /* Peso de fuente normal, no negrita */
+}
+
+/* También puedes restablecer los estilos para los estados hover y focus si es necesario */
+a:hover, a:focus {
+    color: inherit; /* Hereda el color del texto del elemento padre */
+    text-decoration: none; /* Elimina el subrayado */
+}

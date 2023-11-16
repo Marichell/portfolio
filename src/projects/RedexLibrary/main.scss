@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;600;700&display=swap');
+
+$primary: #5956E9;
+$secondary: #FAB8C4;
+$white: #FFFFFF;
+$dark: #27272B;
+
+$fnTitles: 'Jost', sans-serif;
+$fnText: 'Comfortaa', sans-serif;
+
+
+@mixin tlSections($size: 2em, $color: $dark) {
+    font-size: $size;
+    color: $color;
+    font-weight: 600;
+    font-family: $fnTitles;
+    line-height: 1.3em;
+}
+@mixin txSections($size: 0.8em, $color:  lighten($dark, 30)) {
+    font-size: $size;
+    color: $color;
+    font-weight: 600;
+    font-family: $fnText;
+    line-height: 1.5em;
+}
+
+@mixin cardsRdx($background: $secondary, $width: 90%) {
+    background: $background;
+    width: $width;
+    margin: auto;
+    border-radius: 1em;
+}
+
+
+.redexLibraryMeli{
+    .aboutRedex{
+        background: lighten($secondary, 10);
+        padding-bottom: 3em;
+        .header{
+            padding-top: 5em;
+            width: 90%;
+            margin: auto;
+            .title{
+                @include tlSections;
+            }
+            .text{
+                margin-top: 2em;
+                @include txSections;
+            }
+        }
+        .card{
+            margin-top: 3em !important;
+            padding-bottom: 1em;
+            max-width: 350px;
+            @include cardsRdx;
+            .cardImg{
+                position: relative;
+                height: 12em;
+                img{
+                    position: absolute;
+                    bottom: 0;
+                }
+            }
+            .cardContent{
+                @include cardsRdx ($white, 80%);
+                padding: 1em;
+                .title{
+                    @include tlSections (1.5em);
+                }
+                .detail{
+                    @include txSections($color: $dark);
+                    font-weight: 700;
+                    margin-top: 1em;
+                    span{
+                        @include txSections;
+                        font-weight: 300;
+                        svg{
+                            margin-right: 0.3em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px){
+    .redexLibraryMeli{
+        .aboutRedex{
+            padding-bottom: 4em;
+            .header{
+                display: flex;
+                align-items: center;
+                max-width: 900px;
+                div{
+                    width: 50%;
+                }
+            }
+            .card{
+                margin-top: 5em !important;
+                max-width: 900px;
+                height: 14em;
+                display: flex;
+                padding-bottom: 0;
+                div{
+                    width: 50%;
+                }
+                .cardImg{
+                    height: 14em;
+                }
+                .cardContent{
+                    @include cardsRdx ($white, 50%);
+                    margin: 1em;
+                    display: flex;
+                    align-items: center;
+                    .title{
+                        width: 80%;
+                        @include tlSections (2em);
+                    }
+                    .detail{
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1024px){
+    .redexLibraryMeli{
+        .aboutRedex{
+            padding-bottom: 6em;
+            .header{
+                padding: 7em 5em 0;
+                .title{
+                    @include tlSections(3em);
+                }
+                .text{
+                    margin-top: 2em;
+                    @include txSections(1em);
+                }
+            }
+            .card{
+                height: 18em;
+                .cardImg{
+                    height: 18em;
+                }
+                .cardContent{
+                    column-gap: 2em;
+                    .title{
+                        @include tlSections (3em);
+                        line-height: 1em;
+                    }
+                    .detail{
+                        @include txSections(1em, $dark);
+                        span{
+                            @include txSections;
+                            svg{
+                                margin-right: 0.3em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
